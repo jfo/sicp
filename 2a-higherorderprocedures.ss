@@ -112,6 +112,21 @@
 ; start with some guess, y0
 ;   yn + 1 = yn - f(vn) / df/dy | y = yn
 ; yikes jesus.
+;
+; "wishful thinking.... fundamental to computer science- name a functiona nd figure out how it works later.
+
+(define deriv 
+  (lambda(f)
+    (lambda(x)
+      (/ (- (f (+ x dx))
+            (f x))
+         dx))))
+
+(define (newton f guess)
+  (define df (deriv f))
+  (fixed-point
+    (lambda(x) (- x (/ (f x)(df x))))
+  guess))
 
 (define (nsqrt x)
   (newton (lambda(y) (- x (square y)))
@@ -119,4 +134,4 @@
 
 (display (nsqrt 4))
 
-
+; jesus, calculus. unbound dx so far....
