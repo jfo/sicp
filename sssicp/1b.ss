@@ -6,6 +6,8 @@
   (* x x)
 )
 
+(printf "jfad")
+
 (sos 3 4)
 
 ; kinds of expressions:
@@ -39,9 +41,9 @@
 (define (move n from to spare)
   (cond ((= n 0) "done")
         (else
-        (move (-1+ n) from spare to)
-        (print-move from to)
-        (move (-1+ n) spare to from))))
+          (move (-1+ n) from spare to)
+          (print-move from to)
+          (move (-1+ n) spare to from))))
 
 
 
