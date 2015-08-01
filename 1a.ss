@@ -14,7 +14,7 @@
 
 ; let's do herodotus's sqrt
 ;
-(define (square x)
+; (define (square x)
   (* x x))
 
 (define myabs
@@ -40,5 +40,5 @@
 (define (sqroot x)
         (try 1 x))
 
-(display (sqroot 9.0))
+; (display (sqroot 9.0))
 ; awwww yessssss
