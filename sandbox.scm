@@ -1,3 +1,5 @@
+
+
 (define (sq x) (* x x))
 (define (sos x y) (+ (sq x) (sq y)))
 

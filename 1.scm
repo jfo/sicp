@@ -56,7 +56,15 @@
 ; normal if only evaluates the winning branch
 ; if can be remade with a macro, but not a function definition
 
-; 1.7
+(define (change-maker amount denoms)
+  (cond
+    ((= amount 0) 1)
+    ((< amount 0) 0)
+    ((null? denoms) 0)
+    (else
+      (+ (change-maker (- amount (car denoms)) denoms)
+         (change-maker amount (cdr denoms))))))
+(change-maker 100 (reverse '(1 5 10 25 50)))
 
 (put
   (sqrt-iter 7 9)
